@@ -124,26 +124,26 @@ body:not(.cover-on) .watermark{display:none}
 <div class="wrap">
 <header class="top">
   <h1>Árboles de Decisión para Regresión</h1>
-  <div class="sub">Rendimiento académico · 200 estudiantes · sklearn · Grupo expositor</div>
+  <div class="sub">Rendimiento académico · 200 estudiantes · sklearn · ABRAN FRANCO COSI COSI</div>
 </header>
 
 <nav aria-label="Secciones"><div class="tabs" role="tablist" id="tabs"></div></nav>
 
 <!-- 0 PORTADA -->
-<img src="logo-epis.png" alt="" class="watermark" onerror="this.style.display='none'">
+<img src="logo-epis(1).png" alt="" class="watermark" onerror="this.style.display='none'">
 <section class="pane on" id="p-portada" data-title="Portada">
  <div class="sheet">
   <header class="masthead">
     <!-- LOGO: coloca tu imagen como logo-epis.png junto a este archivo, o cambia el src por tu ruta -->
     <img src="logo-epis.png" alt="Escudo EPIS - Ingeniería Estadística e Informática" class="brand-mark" onerror="this.style.display='none'">
-    <div class="kicker">Ciclo académico 2026-I</div>
+    <div class="kicker">Ciclo académico 2026-II</div>
     <h1>Árboles de Decisión para Regresión</h1>
     <p class="tema">Predicción de la puntuación de rendimiento académico</p>
     <p class="faculty"><strong>UNIVERSIDAD NACIONAL DEL ALTIPLANO</strong> · Facultad de Ingeniería Estadística e Informática</p>
     <div class="meta-row">
       <span class="meta-pill">Estudiante: Cosi Cosi Abran Franco</span>
       <span class="meta-pill">Código: 236698</span>
-      <span class="meta-pill">VI Semestre</span>
+      <span class="meta-pill">VII Semestre</span>
       <span class="meta-pill">Puno, Perú</span>
     </div>
   </header>
