@@ -1,6 +1,6 @@
 <title>Árboles de Regresión</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: barra superior fija con secciones; una sección visible a la vez, pensada para exponer en orden. */
 :root{
@@ -85,6 +85,40 @@ summary{cursor:pointer;font-weight:600;color:var(--accent)}
 .pager button:disabled{opacity:.35;cursor:default}
 @media (max-width:560px){.bar{grid-template-columns:1fr 56px}.bar .track{grid-column:1/-1;grid-row:2}.axis{margin-inline:0}.bar .name{grid-column:1}.bar .val{grid-column:2;grid-row:1}}
 @media (prefers-reduced-motion:no-preference){.fill{transition:width .5s ease}}
+
+/* ---------- Carátula (estilo del sílabo) ---------- */
+body.cover-on{background-color:#f6f3ec;background-image:radial-gradient(circle at 1px 1px,rgba(16,27,45,.05) 1px,transparent 1px);background-size:22px 22px;padding-block:3.5rem 3rem}
+body.cover-on header.top,body.cover-on nav,body.cover-on .pager,body.cover-on .foot{display:none}
+#p-portada{--c-ink:#101b2d;--c-paper:#f6f3ec;--c-raised:#fffdf9;--c-rule:#d8d2c2;--c-blue:#2b4d73;--c-deep:#182f4a;--c-gold:#a9812f;--c-muted:#6b6558;color:#2a2a26;position:relative;max-width:900px;margin-inline:auto}
+.watermark{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(70vw,900px);height:auto;opacity:.07;mix-blend-mode:multiply;pointer-events:none;z-index:0;user-select:none}
+body:not(.cover-on) .watermark{display:none}
+#p-portada .sheet{position:relative;z-index:1}
+.brand-mark{display:block;width:min(350px,80%);height:auto;margin:0 auto 1.1rem}
+.masthead{text-align:center;padding-bottom:2.5rem;margin-bottom:2.5rem;border-bottom:1px solid var(--c-rule)}
+.masthead .kicker{font:400 .72rem var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--c-gold);margin-bottom:1.1rem}
+.masthead .kicker::before,.masthead .kicker::after{content:"—";color:var(--c-rule);margin:0 .6em}
+.masthead h1{font:600 clamp(2.2rem,6vw,3.4rem)/1.08 'Fraunces',Georgia,serif;color:var(--c-ink);letter-spacing:-.01em;text-wrap:balance}
+.masthead .tema{margin:.9rem auto 0;max-width:46ch;font:400 1.1rem/1.45 'Fraunces',Georgia,serif;font-style:italic;color:var(--c-blue)}
+.masthead .faculty{margin-top:1.1rem;font-size:1rem;color:var(--c-muted)}
+.masthead .faculty strong{color:var(--c-deep);font-weight:600}
+.masthead .meta-row{display:flex;justify-content:center;gap:.7rem 1.1rem;margin-top:1.6rem;flex-wrap:wrap}
+.meta-pill{font:400 .72rem var(--font-mono);letter-spacing:.05em;color:var(--c-deep);background:var(--c-raised);border:1px solid var(--c-rule);padding:.35rem .9rem;border-radius:2px}
+.index-label{display:flex;align-items:baseline;justify-content:space-between;font:400 .7rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--c-muted);margin-bottom:.9rem;padding:0 .2rem}
+.catalog{display:flex;flex-direction:column}
+.entry{display:grid;grid-template-columns:3.4rem 1fr auto;align-items:center;gap:1.4rem;padding:1.2rem .4rem;border-bottom:1px solid var(--c-rule);text-decoration:none;color:inherit;transition:background .2s ease,padding-left .2s ease}
+.entry:first-child{border-top:1px solid var(--c-rule)}
+.entry:hover,.entry:focus-visible{background:var(--c-raised);padding-left:.9rem;outline:none}
+.entry .num{font:500 1.6rem 'Fraunces',Georgia,serif;color:var(--c-rule);transition:color .2s}
+.entry:hover .num,.entry:focus-visible .num{color:var(--c-gold)}
+.entry h2{font:500 1.2rem/1.25 'Fraunces',Georgia,serif;color:var(--c-ink);margin:0 0 .3rem}
+.entry .code{font:400 .7rem var(--font-mono);letter-spacing:.09em;color:var(--c-blue);text-transform:uppercase}
+.entry .go{display:flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:500;color:var(--c-deep);white-space:nowrap}
+.entry .go svg{width:14px;height:14px;stroke:var(--c-deep);transition:transform .2s}
+.entry:hover .go svg{transform:translateX(4px)}
+.colophon{margin-top:2.5rem;padding-top:1.6rem;border-top:1px solid var(--c-rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;font:400 .7rem var(--font-mono);letter-spacing:.04em;color:var(--c-muted)}
+.colophon .seal{display:flex;align-items:center;gap:.5rem;color:var(--c-deep)}
+.colophon .seal svg{width:16px;height:16px;stroke:var(--c-gold);flex:none}
+@media (max-width:600px){.entry{grid-template-columns:2.4rem 1fr;row-gap:.5rem}.entry .go{grid-column:1/-1;padding-left:2.4rem;color:var(--c-blue)}.entry .num{font-size:1.3rem}.entry h2{font-size:1.08rem}}
 </style>
 
 <div class="wrap">
@@ -95,8 +129,43 @@ summary{cursor:pointer;font-weight:600;color:var(--accent)}
 
 <nav aria-label="Secciones"><div class="tabs" role="tablist" id="tabs"></div></nav>
 
+<!-- 0 PORTADA -->
+<img src="logo-epis.png" alt="" class="watermark" onerror="this.style.display='none'">
+<section class="pane on" id="p-portada" data-title="Portada">
+ <div class="sheet">
+  <header class="masthead">
+    <!-- LOGO: coloca tu imagen como logo-epis.png junto a este archivo, o cambia el src por tu ruta -->
+    <img src="logo-epis.png" alt="Escudo EPIS - Ingeniería Estadística e Informática" class="brand-mark" onerror="this.style.display='none'">
+    <div class="kicker">Ciclo académico 2026-I</div>
+    <h1>Árboles de Decisión para Regresión</h1>
+    <p class="tema">Predicción de la puntuación de rendimiento académico</p>
+    <p class="faculty"><strong>UNIVERSIDAD NACIONAL DEL ALTIPLANO</strong> · Facultad de Ingeniería Estadística e Informática</p>
+    <div class="meta-row">
+      <span class="meta-pill">Estudiante: Cosi Cosi Abran Franco</span>
+      <span class="meta-pill">Código: 236698</span>
+      <span class="meta-pill">VI Semestre</span>
+      <span class="meta-pill">Puno, Perú</span>
+    </div>
+  </header>
+  <div class="index-label"><span>Contenido de la exposición</span><span>Sección</span></div>
+  <div class="catalog" role="navigation" aria-label="Contenido">
+    <a href="#" class="entry" data-go="1"><span class="num">01</span><div><h2>Resumen</h2><span class="code">Métricas y mensaje central</span></div><span class="go">Ir a la sección <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a>
+    <a href="#" class="entry" data-go="2"><span class="num">02</span><div><h2>Datos</h2><span class="code">Variables y estadísticos</span></div><span class="go">Ir a la sección <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a>
+    <a href="#" class="entry" data-go="3"><span class="num">03</span><div><h2>El árbol</h2><span class="code">Reglas y hojas</span></div><span class="go">Ir a la sección <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a>
+    <a href="#" class="entry" data-go="4"><span class="num">04</span><div><h2>Evaluación</h2><span class="code">Real vs predicho y residuos</span></div><span class="go">Ir a la sección <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a>
+    <a href="#" class="entry" data-go="5"><span class="num">05</span><div><h2>Importancia</h2><span class="code">Variables que más pesan</span></div><span class="go">Ir a la sección <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a>
+    <a href="#" class="entry" data-go="6"><span class="num">06</span><div><h2>Optimización</h2><span class="code">Validación cruzada y búsquedas</span></div><span class="go">Ir a la sección <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a>
+    <a href="#" class="entry" data-go="7"><span class="num">07</span><div><h2>Conclusiones</h2><span class="code">Hallazgos y limitaciones</span></div><span class="go">Ir a la sección <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a>
+  </div>
+  <footer class="colophon">
+    <span class="seal"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4Z"></path></svg>FACULTAD DE INGENIERÍA ESTADÍSTICA E INFORMÁTICA · UNIVERSIDAD NACIONAL DEL ALTIPLANO - PUNO</span>
+    <span>Dataset: 200 estudiantes · scikit-learn</span>
+  </footer>
+ </div>
+</section>
+
 <!-- 1 RESUMEN -->
-<section class="pane on" id="p-resumen" data-title="Resumen">
+<section class="pane" id="p-resumen" data-title="Resumen">
   <h2>El modelo explica casi 79% del rendimiento</h2>
   <p class="lead">Un árbol de regresión de 5 niveles y 13 hojas predice la puntuación de rendimiento a partir de horas de estudio, horas de sueño, ubicación y acceso a tutoría. Las horas de estudio concentran casi toda la decisión.</p>
   <div class="grid g4">
@@ -365,9 +434,11 @@ function go(i){cur=Math.max(0,Math.min(panes.length-1,i));
   panes.forEach((p,k)=>p.classList.toggle('on',k===cur));
   [...tabs.children].forEach((b,k)=>b.setAttribute('aria-selected',k===cur));
   $('#prev').disabled=cur===0;$('#next').disabled=cur===panes.length-1;
+  document.body.classList.toggle('cover-on',cur===0);
   tabs.children[cur].scrollIntoView({block:'nearest',inline:'center'});
   window.scrollTo({top:0});
   try{sessionStorage.setItem('tab',cur)}catch(e){}}
+document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();go(+a.dataset.go)}));
 $('#prev').onclick=()=>go(cur-1);$('#next').onclick=()=>go(cur+1);
 addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
 
