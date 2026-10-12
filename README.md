@@ -134,8 +134,8 @@ body:not(.cover-on) .watermark{display:none}
 <section class="pane on" id="p-portada" data-title="Portada">
  <div class="sheet">
   <header class="masthead">
-    <!-- LOGO: coloca tu imagen como logo-epis.png junto a este archivo, o cambia el src por tu ruta -->
-    <img src="logo-epis.png" alt="Escudo EPIS - Ingeniería Estadística e Informática" class="brand-mark" onerror="this.style.display='none'">
+    <!-- LOGO: coloca tu imagen como logo-epis(1).png junto a este archivo, o cambia el src por tu ruta -->
+    <img src="logo-epis(1).png" alt="Escudo EPIS - Ingeniería Estadística e Informática" class="brand-mark" onerror="this.style.display='none'">
     <div class="kicker">Ciclo académico 2026-II</div>
     <h1>Árboles de Decisión para Regresión</h1>
     <p class="tema">Predicción de la puntuación de rendimiento académico</p>
